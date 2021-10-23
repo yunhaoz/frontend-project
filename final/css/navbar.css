@@ -1,0 +1,61 @@
+.navbar
+		{
+			background-color: #D4AA93;
+			font-size: 20px;
+			font-family: sans-serif;
+			transition: 2s;
+		}
+		.navbar a
+		{
+			color:white;
+			font-weight: 900;
+		}
+		.navbar-toggler
+		{
+			color: #CB997E;
+			background-color: #99735F;
+		}
+		.navbar-toggler-icon
+		{
+			background-color: #C1B29B;
+			border-radius: 50%;
+		}
+
+		@keyframes smaller
+		{
+			0% {
+				transform: scale(1);
+			}
+			50% {
+				transform: scale(0.2);
+			}
+			100%
+			{
+				transform: scale(1);
+			}
+		}
+		.navbar-toggler-icon:hover
+		{
+			animation: smaller 1.5s linear infinite;
+		}
+		#bar1:hover a
+		{
+			font-size:25px;
+			font-weight: 1000;
+			color:black;
+			transition: 200ms;
+		}
+		#bar2:hover a
+		{
+			font-size:25px;
+			font-weight: 1000;
+			color:black;
+			transition: 200ms;
+		}
+		#bar3:hover a
+		{
+			font-size:25px;
+			font-weight: 1000;
+			color:black;
+			transition: 200ms;
+		}

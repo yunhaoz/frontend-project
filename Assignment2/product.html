@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Yunhao Zhao</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style type="text/css">
+		html,body
+		{
+			margin: 0;
+			padding: 0;
+		}
+		#header
+		{
+			background-color: #B0E0E6;
+			color:white;
+			font-family: "Sofia";
+		}
+		#header h1 {
+			margin: 0;
+			text-align: center;
+		}
+		#all
+		{
+			width:100%;
+			background-color: white;
+			margin-top:-10px;
+		}
+		#product
+		{
+			width:100%;
+			margin-top: 10px;
+		}
+		#pic
+		{
+			width: 100%;
+		}
+		#pic img
+		{
+			width: 100%;
+		}
+
+		#info img
+		{
+			width:100%;
+		}
+		#code
+		{
+			border: 2px solid black;
+			background-color: lightgreen;
+			padding:0;
+			margin:0;
+			width: 80%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		#code h3
+		{
+			text-align: center;
+			color:white;
+		}
+		#relate
+		{
+			width:100%;
+		}
+		.box
+		{
+			margin-left: auto;
+			margin-right: auto;
+			border: 2px solid black;
+			width: 50vw;
+    		height:50vw;
+    		margin-top: 20px;
+    		position: relative;
+		}
+		.box img
+		{
+			width:100%;
+			height: 100%;
+			
+		}
+		.cover
+		{
+			width: 50vw;
+			height:50vw;
+			top:0;
+			visibility: hidden;
+			background-color: grey;
+			position: absolute;
+			opacity: 0.9;
+			color: white;
+			text-align: center;
+			font-size: 40px;
+		}
+		.box:hover .cover
+		{
+			visibility: visible;
+		}
+		.clearfloat
+		{
+			clear: both;
+		}
+		@media(min-width: 768px)
+		{
+			#name
+			{
+				float:right;
+				width:55%;
+			}
+			#pic
+			{
+				float:left;
+				width:44%;
+			}
+			#info
+			{
+				float:left;
+				width: 55%
+			}
+			.box
+			{
+				float: left;
+				margin-left: 2%;
+				width: 22vw;
+				height: 22vw;
+				margin-bottom: 50px;
+			}
+			.cover
+			{
+				width: 22vw;
+				height: 22vw;
+			}
+		}
+		@media (min-width: 992px)
+		{
+			#all
+			{
+				width: 90%;
+				margin-left: auto;
+				margin-right:auto;
+			}
+			body
+			{
+				background-color: grey;
+			}
+			#name
+			{
+				float:right;
+				width:55%;
+				max-width: 1000px;
+			}
+			#pic
+			{
+				float:left;
+				width:44%;
+			}
+			#info
+			{
+				float:left;
+				width: 55%
+				max-width:1000px;
+			}
+			.box
+			{
+				float: left;
+				margin-left: 2%;
+				width: 19vw;
+				height: 19vw;
+				margin-bottom: 50px;
+			}
+			.cover
+			{
+				width: 19vw;
+				height: 19vw;
+			}
+		}
+
+
+	</style>
+</head>
+<body>
+	<div id="header">
+		<h1>Yunhao's Store</h1>
+	</div>
+
+<div id="all">
+	<div id="product">
+		<div id="name"><h2>Switch</h2></div>
+		<div id="pic">
+			<img src="https://ocs-pl.oktawave.com/v1/AUTH_2887234e-384a-4873-8bc5-405211db13a2/spidersweb/2020/04/Nintendo-Switch-Pro.jpg">
+			<div id="code">
+				<h3>Promo code TOMZHAO to get 50% off</h3>
+			</div>
+		</div>
+
+		<div id="info">
+			<img src="price.png">
+			<ul>
+				<li>3 Play Styles: TV Mode, Tabletop Mode, Handheld Mode</li>
+				<li>6.2-inch, multi-touch capacitive touch screen</li>
+				<li>4.5-9+ Hours of Battery Life *Will vary depending on software usage conditions</li>
+				<li>Connects over Wi-Fi for multiplayer gaming; Up to 8 consoles can be connected for local wireless multiplayer</li>
+				<li>Model number: HAC-001(-01)</li>
+			</ul>
+		</div>
+		<div class="clearfloat"></div>
+	</div>
+
+	<div id="relate">
+		<h2>Related Products</h2>
+		<div class="box">
+			<img src="https://images-na.ssl-images-amazon.com/images/I/71c9rjXSuHL._AC_SL1417_.jpg">
+			<div class="cover">Switch Ring</div>		
+		</div>
+		<div class="box">
+			<div class="cover">Carrying</div>
+			<img src="https://images-na.ssl-images-amazon.com/images/I/61JiIfR4AzL._AC_SL1001_.jpg">
+		</div>
+		<div class="box">
+			<div class="cover">Game</div>
+			<img src="https://images-na.ssl-images-amazon.com/images/I/710JXdscVsL._AC_SL1500_.jpg">
+		</div>
+		<div class="box">
+			<div class="cover">Color Version</div>
+			<img src="https://images-na.ssl-images-amazon.com/images/I/81437h4aLoL._AC_SL1500_.jpg">
+		</div>
+		<div class="clearfloat"></div>
+
+	</div>
+</div>
+
+</body>
+</html>

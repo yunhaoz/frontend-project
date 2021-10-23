@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register Page</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/navbar.css">
+    <script src="js/Chart.min.js"></script>
+	<script src="js/utils.js"></script>
+    <style type="text/css">
+
+		body {
+			background-color: #FFF1E6;
+		}
+		.container
+		{
+			width: 700px;
+			padding:20px;
+			margin:10px;
+			height: auto;
+			margin-left: auto;
+			margin-right: auto;
+			font-family: sans-serif;
+			text-align: center;
+			color: #A87E69;
+			background-color: #E9D4C8;
+			border-radius: 20px;
+			font-size: 18px;
+			font-weight: 900;
+		}
+		.btn
+		{
+			background-color: #CB997E;
+			color: #F0EFEB;
+			border-color: #CB997E;
+			width: 200px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		@media(max-width: 767px) {
+			
+			.container
+			{
+				width: auto;
+			}
+
+		}
+		#resultList
+		{
+			text-align: left;
+			color:black;
+		}
+		h2
+		{
+			text-align: center;
+			color: #A87E69;
+			font-size: 30px;
+			font-weight: 900;
+		}
+		#search-results li
+		{
+			padding: 2px;
+			font-size: 10px;
+		}
+		canvas {
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		}
+		#canvas-holder
+		{
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.footer
+		{
+			position: fixed;
+			background-color: black;
+			width: 100%;
+			text-align: center;
+			bottom:0;
+			color: white;
+			font-size: 10px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar">
+	    <a class="navbar-brand" href="homepage.php">MY F&F</a>
+	    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars" aria-controls="navbars" aria-expanded="false">
+	    <span class="navbar-toggler-icon"></span>
+	    </button>
+	    <div class="collapse navbar-collapse" id="navbars">
+		    <ul class="navbar-nav mr-auto">
+		      <li class="nav-item active" id="bar1">
+		        <a class="nav-link" href="homepage.php" >My F&F</a>
+		      </li>
+		      <li class="nav-item" id="bar2">
+		        <a class="nav-link" href="search.html">Find My Friends</a>
+		      </li>
+		      <li class="nav-item" id="bar3">
+		        <a class="nav-link" href="edit.php">Edit My Profiles</a>
+		      </li>
+		    </ul>
+	  </div>
+	</nav>
+
+	<div class="container">
+		<h1>Find Your Potential Friends</h1>
+		<br>
+		<form action="" method="">
+			<div class="form-group row">
+			    <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+			    <div class="col-sm-4">
+			      <input type="email" class="form-control" id="inputEmail" placeholder="email" name="email_id">
+			      <small id="email-error" class="invalid-feedback">Email character is no more then 50.</small>
+			    </div>
+			    <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+			    <div class="col-sm-4">
+			      <input type="text" class="form-control" id="inputName" placeholder="name" name="name_id">
+			      <small id="username-error" class="invalid-feedback">User Name character is no more then 50.</small>
+			    </div>
+			</div>
+			<div class="form-group row">
+				<label for="movie_id" class="col-sm-2 col-form-label">Movies</label>
+				<div class="col-sm-4">
+					<select class="custom-select" id="movie_id" name="movie_id">
+					  <option value="" selected disabled>Select types of Movie</option>
+					  <option value="1">Animation</option>
+					  <option value="2">Romance</option>
+					  <option value="3">Horror</option>
+					  <option value="4">Science Fiction</option>
+					  <option value="5">Comedy</option>
+					  <option value="6">Action</option>
+					  <option value="7">Drama</option>
+					  <option value="8">Adventure</option>
+					  <option value="9">Mystery</option>
+					</select>
+				</div>
+				<label for="sport_id" class="col-sm-2 col-form-label">Sports</label>
+				<div class="col-sm-4">
+					<select class="custom-select" id="sport_id" name="sport_id">
+					  <option value="" selected disabled>Select types of Sport</option>
+					  <option value="1">Basketball</option>
+					  <option value="2">Tennis</option>
+					  <option value="3">Badminton</option>
+					  <option value="4">Football</option>
+					  <option value="5">Swimming</option>
+					  <option value="6">Hiking</option>
+					  <option value="7">Soccer</option>
+					  <option value="8">Gym Exercise</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<label for="music_id" class="col-sm-2 col-form-label">Music</label>
+				<div class="col-sm-4">
+					<select class="custom-select" id="music_id" name="music_id">
+					  <option value="" selected disabled>Select types of Music</option>
+					  <option value="1">Rock</option>
+					  <option value="2">Jazz</option>
+					  <option value="3">Pop</option>
+					  <option value="4">Hippop</option>
+					  <option value="5">Classical</option>
+					  <option value="6">Country</option>
+					  <option value="7">Rap</option>
+					</select>
+				</div>
+				<label for="food_id" class="col-sm-2 col-form-label">Food</label>
+				<div class="col-sm-4">
+					<select class="custom-select" id="food_id">
+					  <option value="" selected disabled>Select types of Food</option>
+					  <option value="1">American</option>
+					  <option value="2">Asian</option>
+					  <option value="3">Mexican</option>
+					  <option value="4">Indian</option>
+					  <option value="5">Thai</option>
+					  <option value="6">Vegeterian</option>
+					  <option value="7">European</option>
+					</select>
+				</div>
+			</div>
+			
+
+			<div class="form-group row">
+				<label for="gender_id" class="col-sm-2 col-form-label">Gender</label>
+				<div class="col-sm-4">
+					<select class="custom-select" id="gender_id">
+					  <option value="" selected disabled>Select Gender</option>
+					  <option value="1">Male</option>
+					  <option value="2">Female</option>
+					</select>
+				</div>
+			</div>
+
+
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
+			<button class="btn btn-lg btn-primary btn-block" type="reset">Reset</button>
+		</form>
+
+		<div class="row" id="resultList">
+			<h2 class="col-12 mt-3 mb-3">Potential Friend List:</h2>
+			<div id="canvas-holder" style="width:60%">
+				<canvas id="chart-area"></canvas>
+			</div>
+			<div class="col-12">
+				<ol id="search-results">
+				</ol>
+			</div>
+		</div>
+	</div>
+
+	
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    <script type="text/javascript"></script>
+
+    <script>
+		// Client-side input validation
+		document.querySelector('form').onsubmit = function(){
+			if ( document.querySelector('#inputEmail').value.trim().length >= 50 ) {
+				document.querySelector('#inputEmail').classList.add('is-invalid');
+			} else {
+				document.querySelector('#inputEmail').classList.remove('is-invalid');
+			}
+
+			if ( document.querySelector('#inputName').value.trim().length >= 50 ) {
+				document.querySelector('#inputName').classList.add('is-invalid');
+			} else {
+				document.querySelector('#inputName').classList.remove('is-invalid');
+			}
+
+			return ( !document.querySelectorAll('.is-invalid').length > 0 );
+		}
+	</script>
+	<script>
+		
+
+		function ajaxGet(endpointUrl, returnFunction){
+			var xhr = new XMLHttpRequest();
+			xhr.open('GET', endpointUrl, true);
+			xhr.onreadystatechange = function(){
+				if (xhr.readyState == XMLHttpRequest.DONE) {
+					if (xhr.status == 200) {
+						// When ajax call is complete, call this function, pass a string with the response
+						returnFunction( xhr.responseText);
+					} else {
+						alert('AJAX Error.');
+						console.log(xhr.status);
+					}
+				}
+			}
+			xhr.send();
+		};
+
+		document.querySelector("form").onsubmit = function(event) {
+			event.preventDefault();
+			var countFemale = 0;
+			var countMale = 0;
+			var countUnkwown = 0;
+
+			let email = document.querySelector("#inputEmail").value.trim();
+			let name = document.querySelector("#inputName").value.trim();
+			let movie = document.querySelector("#movie_id").value;
+			let sport = document.querySelector("#sport_id").value;
+			let music = document.querySelector("#music_id").value;
+			let food = document.querySelector("#food_id").value;
+			let gender = document.querySelector("#gender_id").value;
+
+
+			ajaxGet("searchbackend.php?email_id="+email+"&name_id="+name+"&movie_id="+movie+"&sport_id="+sport+"&music_id="+music+"&food_id="+food+"&gender_id="+gender, function(results){
+				// Convert results JSON string into JS objects
+				results = JSON.parse(results);
+
+				// Display the results on the browser
+				let resultsList = document.querySelector("#search-results");
+
+				// Clear previous results upon every search
+				while( resultsList.hasChildNodes()) {
+					resultsList.removeChild(resultsList.lastChild);
+				}
+
+				// Run through the song results. Create a <li> element for each result
+				// Append a <li> per result
+				for (let i = 0; i < results.length; i++) {
+					let li = document.createElement("li");
+					let email  = document.createElement("a");
+					let object = document.createElement("ul");
+					let name = document.createElement("li");
+					let movie = document.createElement("li");
+					let food = document.createElement("li");
+					let sport = document.createElement("li");
+					let music = document.createElement("li");
+					let gender = document.createElement("li");
+					let des = document.createElement("li");
+
+					email.innerHTML = results[i].email;
+					email.href="#";
+					name.innerHTML = "Name : "+results[i].name;
+					movie.innerHTML = "Favorite Type of Movies : "+results[i].movie;
+					food.innerHTML = "Favorite Type of Foods : "+results[i].food;
+					sport.innerHTML = "Favorite Type of Sports : "+results[i].sport;
+					music.innerHTML = "Favorite Type of Musics : "+results[i].music;
+					gender.innerHTML = "Gender : "+results[i].gender;
+					if(results[i].gender==null)
+					{
+						countUnkwown++;
+					}
+					else if(results[i].gender=="male")
+					{
+						countMale++;
+					}
+					else
+					{
+						countFemale++;
+					}
+					des.innerHTML = "Self-description : "+results[i].description;
+					object.appendChild(name);
+					object.appendChild(gender);
+					object.appendChild(movie);
+					object.appendChild(food);
+					object.appendChild(sport);
+					object.appendChild(music);
+					object.appendChild(des);
+					li.appendChild(email);
+					li.appendChild(object);
+					resultsList.appendChild(li);
+				}
+			var randomScalingFactor = function() {
+				return Math.round(Math.random() * 100);
+			};
+
+		var config = {
+			type: 'doughnut',
+			data: {
+				datasets: [{
+					data: [
+						countFemale,countMale,countUnkwown,
+					],
+					backgroundColor: [
+						window.chartColors.red,
+						window.chartColors.blue,
+						window.chartColors.yellow,
+					],
+				}],
+				labels: [
+					'Female',
+					'Male',
+					'Unkwown',
+				]
+			},
+			options: {
+				responsive: true,
+						legend: {
+							position: 'top',
+						},
+						animation: {
+							animateScale: true,
+							animateRotate: true
+						}
+					}
+				};
+
+			let chartlist = document.querySelector("#chart-area");
+
+				// Clear previous results upon every search
+				while( chartlist.hasChildNodes()) {
+					chartlist.removeChild(chartlist.lastChild);
+				}
+
+		// window.onload = function() {
+			var ctx = document.querySelector('#chart-area').getContext('2d');
+			myDoughnut = new Chart(ctx, config);
+		// };
+		});
+	}
+	
+		
+	</script>
+	<div class="footer">
+		producted by Yunhao Zhao @2020 itp303
+	</div>
+</body>
+</html>
